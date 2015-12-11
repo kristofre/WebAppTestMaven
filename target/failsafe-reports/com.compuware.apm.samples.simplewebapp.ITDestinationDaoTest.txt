@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.compuware.apm.samples.simplewebapp.ITDestinationDaoTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.504 sec - in com.compuware.apm.samples.simplewebapp.ITDestinationDaoTest

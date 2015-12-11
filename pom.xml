@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.compuware.apm.samples</groupId>
+	<artifactId>simple-web-app-maven-sample</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+	<name>Simple WebApp using Hibernate</name>
+
+	<properties>
+		<!-- Skip artifact deployment -->
+		<maven.deploy.skip>true</maven.deploy.skip>
+		<dynaTrace.version>6.2</dynaTrace.version>
+
+		<dynaTrace.testCategory>performance</dynaTrace.testCategory>
+		<dynaTrace.agentGroup>Maven</dynaTrace.agentGroup>
+		<dynaTrace.profileName>CD</dynaTrace.profileName>
+		<dynaTrace.username>admin</dynaTrace.username>
+		<dynaTrace.password>admin</dynaTrace.password>
+		<dynaTrace.collector>192.168.232.10:9998</dynaTrace.collector>
+		<dynaTrace.serverUrl>http://192.168.232.10:8020</dynaTrace.serverUrl>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.2.145</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>dynaTrace</groupId>
+			<artifactId>dtAutomation</artifactId>
+			<version>${dynaTrace.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>simple-webapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.26</version>
+			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.17</version>
+				<configuration><skip>true</skip></configuration>
+			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<forkMode>once</forkMode>
+					<argLine>-agentpath:/opt/dynatrace-6.2/agent/lib64/libdtagent.so=name=${dynaTrace.agentGroup}_${dynaTrace.profileName},server=${dynaTrace.collector}</argLine>
+					<systemProperties>
+						<property>
+							<name>com.dynatrace.diagnostics.ci.testrunID</name>
+							<value>${dtTestrunID}</value>
+						</property>
+					</systemProperties>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>dynaTrace</groupId>
+				<artifactId>dtAutomation</artifactId>
+				<version>${dynaTrace.version}</version>
+				<configuration>
+					<category>performance</category>
+					<versionMajor>1</versionMajor>
+					<versionMinor>2</versionMinor>
+					<versionRevision>3</versionRevision>
+					<versionMilestone>5</versionMilestone>
+					<versionBuild>${BUILD_ID}</versionBuild>
+
+					<profileName>${dynaTrace.profileName}</profileName>
+					<username>admin</username>
+					<password>admin</password>
+					<serverUrl>http://192.168.232.10:8020</serverUrl>
+					<additionalProperties></additionalProperties>
+				</configuration>
+				<executions>
+					<execution>
+						<id>DT_StartTest</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>startTest</goal>
+							<!--goal>startRecording</goal-->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
