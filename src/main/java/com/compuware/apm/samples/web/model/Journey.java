@@ -23,7 +23,7 @@ public class Journey {
   }
 
   // hibernate constructor
-  private Journey() {
+  protected Journey() {
       
   }
   

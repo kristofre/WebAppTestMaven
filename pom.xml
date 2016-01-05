@@ -20,6 +20,7 @@
 		<dynaTrace.password>admin</dynaTrace.password>
 		<dynaTrace.collector>192.168.232.10:9998</dynaTrace.collector>
 		<dynaTrace.serverUrl>http://192.168.232.10:8020</dynaTrace.serverUrl>
+		<dynaTrace.agentPath>/opt/dynatrace-6.3/agent/lib64/libdtagent.so</dynaTrace.agentPath>
 	</properties>
 
 	<dependencies>
@@ -72,16 +73,16 @@
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.17</version>
+				<version>2.19</version>
 				<configuration><skip>true</skip></configuration>
 			</plugin>
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.17</version>
+				<version>2.19</version>
 				<configuration>
 					<forkMode>once</forkMode>
-					<argLine>-agentpath:/opt/dynatrace-6.2/agent/lib64/libdtagent.so=name=${dynaTrace.agentGroup}_${dynaTrace.profileName},server=${dynaTrace.collector}</argLine>
+					<argLine>-agentpath:${dynaTrace.agentPath}=name=${dynaTrace.agentGroup}_${dynaTrace.profileName},server=${dynaTrace.collector}</argLine>
 					<systemProperties>
 						<property>
 							<name>com.dynatrace.diagnostics.ci.testrunID</name>
@@ -130,5 +131,12 @@
 		</plugins>
 	</build>
 
+<repositories>
+    <repository>
+      <id>nexus</id>
+      <name>nexus repo</name>
+      <url>http://localhost:8081/content/repositories/thirdparty/</url>
+    </repository>
+  </repositories>
 
 </project>
