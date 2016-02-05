@@ -1,4 +1,4 @@
-package com.compuware.apm.samples.simplewebapp;
+package com.dynatrace.samples.simplewebapp;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.compuware.apm.samples.web.TestDataCreator;
-import com.compuware.apm.samples.web.dao.DestinationDao;
-import com.compuware.apm.samples.web.model.Destination;
+import com.dynatrace.samples.web.TestDataCreator;
+import com.dynatrace.samples.web.dao.DestinationDao;
+import com.dynatrace.samples.web.model.Destination;
 import static org.junit.Assert.*;
 
 public class ITDestinationDaoTest {

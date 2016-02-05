@@ -1,12 +1,12 @@
-package com.compuware.apm.samples.web;
+package com.dynatrace.samples.web;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.compuware.apm.samples.web.model.Destination;
-import com.compuware.apm.samples.web.model.Journey;
+import com.dynatrace.samples.web.model.Destination;
+import com.dynatrace.samples.web.model.Journey;
 
 public class TestDataCreator {
   

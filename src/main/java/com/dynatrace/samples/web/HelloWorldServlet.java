@@ -1,4 +1,4 @@
-package com.compuware.apm.samples.web;
+package com.dynatrace.samples.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.compuware.apm.samples.web.dao.DestinationDao;
-import com.compuware.apm.samples.web.listener.PersistenceListener;
-import com.compuware.apm.samples.web.model.Destination;
+import com.dynatrace.samples.web.dao.DestinationDao;
+import com.dynatrace.samples.web.listener.PersistenceListener;
+import com.dynatrace.samples.web.model.Destination;
 
 public class HelloWorldServlet extends HttpServlet {
 

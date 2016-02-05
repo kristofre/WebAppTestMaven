@@ -1,6 +1,6 @@
-com/compuware/apm/samples/web/model/Journey.class
-com/compuware/apm/samples/web/listener/PersistenceListener.class
-com/compuware/apm/samples/web/TestDataCreator.class
-com/compuware/apm/samples/web/HelloWorldServlet.class
-com/compuware/apm/samples/web/dao/DestinationDao.class
-com/compuware/apm/samples/web/model/Destination.class
+com/dynatrace/samples/web/TestDataCreator.class
+com/dynatrace/samples/web/listener/PersistenceListener.class
+com/dynatrace/samples/web/dao/DestinationDao.class
+com/dynatrace/samples/web/HelloWorldServlet.class
+com/dynatrace/samples/web/model/Destination.class
+com/dynatrace/samples/web/model/Journey.class

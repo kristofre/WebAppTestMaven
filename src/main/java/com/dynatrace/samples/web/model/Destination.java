@@ -1,4 +1,4 @@
-package com.compuware.apm.samples.web.model;
+package com.dynatrace.samples.web.model;
 
 import java.util.List;
 

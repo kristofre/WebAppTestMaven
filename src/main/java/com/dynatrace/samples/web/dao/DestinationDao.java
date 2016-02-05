@@ -1,4 +1,4 @@
-package com.compuware.apm.samples.web.dao;
+package com.dynatrace.samples.web.dao;
 
 import java.util.Collections;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 
-import com.compuware.apm.samples.web.model.Destination;
+import com.dynatrace.samples.web.model.Destination;
 
 public class DestinationDao {
   private EntityManagerFactory entityManagerFactory;

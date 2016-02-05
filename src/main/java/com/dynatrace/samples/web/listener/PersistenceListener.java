@@ -1,4 +1,4 @@
-package com.compuware.apm.samples.web.listener;
+package com.dynatrace.samples.web.listener;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

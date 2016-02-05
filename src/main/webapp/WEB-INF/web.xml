@@ -15,11 +15,11 @@
         based on the recommendations of the Application Developer's Guide.
     </description>
   <listener>
-    <listener-class>com.compuware.apm.samples.web.listener.PersistenceListener</listener-class>
+    <listener-class>com.dynatrace.samples.web.listener.PersistenceListener</listener-class>
   </listener>
   <servlet>
     <servlet-name>HelloWorldServlet</servlet-name>
-    <servlet-class>com.compuware.apm.samples.web.HelloWorldServlet</servlet-class>
+    <servlet-class>com.dynatrace.samples.web.HelloWorldServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloWorldServlet</servlet-name>

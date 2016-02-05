@@ -27,8 +27,8 @@
              version="2.0">
 
     <persistence-unit name="my-pu">
-        <class>com.compuware.apm.samples.web.model.Journey</class>
-        <class>com.compuware.apm.samples.web.model.Destination</class>
+        <class>com.dynatrace.samples.web.model.Journey</class>
+        <class>com.dynatrace.samples.web.model.Destination</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />

@@ -1,6 +1,6 @@
-/home/dev1/workspace/WebAppTestMaven/src/main/java/com/compuware/apm/samples/web/HelloWorldServlet.java
-/home/dev1/workspace/WebAppTestMaven/src/main/java/com/compuware/apm/samples/web/model/Journey.java
-/home/dev1/workspace/WebAppTestMaven/src/main/java/com/compuware/apm/samples/web/model/Destination.java
-/home/dev1/workspace/WebAppTestMaven/src/main/java/com/compuware/apm/samples/web/listener/PersistenceListener.java
-/home/dev1/workspace/WebAppTestMaven/src/main/java/com/compuware/apm/samples/web/TestDataCreator.java
-/home/dev1/workspace/WebAppTestMaven/src/main/java/com/compuware/apm/samples/web/dao/DestinationDao.java
+/home/dev1/workspace/WebAppTestMaven/src/main/java/com/dynatrace/samples/web/listener/PersistenceListener.java
+/home/dev1/workspace/WebAppTestMaven/src/main/java/com/dynatrace/samples/web/TestDataCreator.java
+/home/dev1/workspace/WebAppTestMaven/src/main/java/com/dynatrace/samples/web/model/Destination.java
+/home/dev1/workspace/WebAppTestMaven/src/main/java/com/dynatrace/samples/web/HelloWorldServlet.java
+/home/dev1/workspace/WebAppTestMaven/src/main/java/com/dynatrace/samples/web/dao/DestinationDao.java
+/home/dev1/workspace/WebAppTestMaven/src/main/java/com/dynatrace/samples/web/model/Journey.java
