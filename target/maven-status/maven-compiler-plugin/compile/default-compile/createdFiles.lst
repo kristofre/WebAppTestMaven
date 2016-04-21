@@ -1,6 +1,0 @@
-com/dynatrace/samples/web/TestDataCreator.class
-com/dynatrace/samples/web/listener/PersistenceListener.class
-com/dynatrace/samples/web/dao/DestinationDao.class
-com/dynatrace/samples/web/HelloWorldServlet.class
-com/dynatrace/samples/web/model/Destination.class
-com/dynatrace/samples/web/model/Journey.class

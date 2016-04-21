@@ -20,6 +20,7 @@ public class DestinationDao {
     if (entityManagerFactory == null) {
       throw new RuntimeException("No EntityManagerFactory!");
     }
+    
     EntityManager em = entityManagerFactory.createEntityManager();
     List<Destination> destinations = em.createQuery("from Destination",
         Destination.class).getResultList();
